@@ -10,19 +10,19 @@
     
         <div class="form-group">
           <label for="position">Position</label>
-          <input type="text" class="form-control" name="position" value='<%= job["position"]%>'>
+          <input type="text" class="form-control" name="position[]" value='<%= job["position"]%>'>
         </div>
         <div class="form-group">
           <label for="place">Place</label>
-          <input type="text" class="form-control" name="place" value='<%= job["place"]%>''>
+          <input type="text" class="form-control" name="place[]" value='<%= job["place"]%>''>
         </div>
         <div class="form-group">
           <label for="time">Time</label>
-          <input type="text" class="form-control" name="time" value='<%= job["time"]%>''>
+          <input type="text" class="form-control" name="time[]" value='<%= job["time"]%>''>
         </div>
         <div class="form-group">
           <label for="role">Role</label>
-          <textarea class="form-control" name="role" rows="2"><%= job["role"]%></textarea>
+          <textarea class="form-control" name="role[]" rows="2"><%= job["role"]%></textarea>
         </div>
         <hr class="m-0">
       <% end %>

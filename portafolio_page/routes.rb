@@ -13,6 +13,17 @@ def write_data(filename, data)
   end
 end
 
+def convert(data)
+  size = data.values[0].length
+  @new = Array.new(size, {})
+  data.each do |key,value|
+    value.each_with_index do |val, index|
+      @new[index] = @new[index].merge({key => val})
+    end
+  end
+  @new
+end
+
 #----------------------------------------
 get "/" do
   @data = read_data("about.json")
@@ -41,7 +52,7 @@ get "/experience_edit" do
 end
 
 post "/experience" do
-  write_data("experience.json", params)
+  write_data("experience.json", convert(params))
   redirect '/experience'
 end
 
